@@ -1,5 +1,7 @@
 name: goreleaser
-on: release
+on:
+  release:
+    types: [published]
 permissions:
   contents: write
   # packages: write
