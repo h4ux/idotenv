@@ -33,20 +33,25 @@ Ex:
   -v    idotenv version
 ```
 
-## Installation via install.sh
+## How To Use
 
-* Temporary until brew tap will be configured
-
-```bash
-# binary will be in $(go env GOPATH)/bin/idotenv
-curl -sSfL https://raw.githubusercontent.com/h4ux/idotenv/main/install.sh | sh -s -- -b $(go env GOPATH)/bin
-
-# defualt installation into ./bin/
-curl -sSfL https://raw.githubusercontent.com/h4ux/idotenv/main/install.sh | sh -s
+Add repository:
 
 ```
+brew tap h4ux/idotenv
+```
 
-Once you run idotenv -configure idotenv will create .env.idotenv file in executed path
+Install [idotenv](https://github.com/h4ux/idotenv):
+
+```
+brew install idotenv
+```
+
+Upgrade the idotenv CLI to the latest version:
+
+```
+brew upgrade idotenv
+```
 
 ### Help
 
