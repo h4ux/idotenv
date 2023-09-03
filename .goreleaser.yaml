@@ -38,7 +38,13 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
-
+brews:
+- name: idotenv
+  homepage: https://github.com/h4ux/homebrew-idotenv
+  tap:
+    owner: h4ux
+    name: homebrew-idotenv
+    
 # The lines beneath this are called `modelines`. See `:help modeline`
 # Feel free to remove those if you don't want/use them.
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json
