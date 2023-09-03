@@ -7,8 +7,7 @@ on:
     paths:
       - 'main.go'
       - '.github/workflows/**'
-      - 'install.sh'
-
+      - '.goreleaser.yaml'
 jobs:
   build:
     runs-on: ubuntu-latest
