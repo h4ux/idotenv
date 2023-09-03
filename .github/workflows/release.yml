@@ -20,7 +20,7 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: 'envaultVTAG'
+          find: 'idotenvVTAG'
           replace: ${{ env.RELEASE_VERSION }}
           include: 'main.go'
       - run: git fetch --force --tags
