@@ -11,17 +11,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: read
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: rymndhng/release-on-push-action@master
         with:
-          fetch-depth: '0'
-
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.64.0 # Don't use @master or @v1 unless you're happy to test the latest version
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # if you don't want to set write permissions use a PAT token
-          WITH_V: true
-          DEFAULT_BUMP: patch
+          bump_version_scheme: patch
+          tag_prefix: v
+          use_github_release_notes: true
