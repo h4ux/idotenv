@@ -17,6 +17,12 @@ import (
 	"github.com/joho/godotenv"
 )
 
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
+
 func fetchFile() []byte {
 	url := goDotEnvVariable("URI_ADDR", ".env.idotenv")
 	method := goDotEnvVariable("FETCH_METHOD", ".env.idotenv")
@@ -239,7 +245,7 @@ func isFlagPassed(name string) bool {
 	return found
 }
 
-func version() {
+func ver() {
 	println(color.Colorize(color.Cyan, `   
 
    o            o                 o                                         
@@ -250,8 +256,13 @@ func version() {
   / \   />     / \  />       <\   |      />      //   / \   / \  < >    < > 
   \o/   \      \o/  \         /   |      \o    o/     \o/   \o/   \o    o/  
    |     o      |    o       o    o       v\  /v __o   |     |     v\  /v   
-  / \    <\__  / \   <\__ __/>    <\__     <\/> __/>  / \   / \     <\/>    idotenvVTAG
+  / \    <\__  / \   <\__ __/>    <\__     <\/> __/>  / \   / \     <\/>    
 	`))
+
+	println(color.Colorize(color.Yellow, "idotenv ver: "+version))
+	println(color.Colorize(color.Blue, "commit: "+commit))
+	println(color.Colorize(color.Blue, "built at: "+date))
+	//fmt.Printf("idotenv %s, commit %s, built at %s", version, commit, date)
 }
 
 func main() {
@@ -266,7 +277,7 @@ func main() {
 	flag.Parse()
 
 	if *idotenvV {
-		version()
+		ver()
 		return
 	}
 
