@@ -15,5 +15,5 @@
 # vendor/
 .env*
 /bin
-
+main
 dist/
