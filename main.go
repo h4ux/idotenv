@@ -54,16 +54,24 @@ func goDotEnvVariable(key string, envfile string) string {
 
 	//if err != nil {
 	//home := os.Getenv("HOME")
-	err := godotenv.Load(envfile)
+	//err := godotenv.Load(envfile)
+	myVars, err := godotenv.Read(envfile)
+
 	if err != nil {
 		log.Fatalf("Error loading " + envfile + " file")
 	}
 	//}
-	if os.Getenv(key) == "" {
-		//log.Fatalf("Error " + key + " not set in .env file")
+	if myVars[key] == "" {
 		println(color.Colorize(color.Yellow, "variable "+key+" does not exists"))
 	}
-	return os.Getenv(key)
+
+	return myVars[key]
+
+	//if os.Getenv(key) == "" {
+	//	//log.Fatalf("Error " + key + " not set in .env file")
+	//	println(color.Colorize(color.Yellow, "variable "+key+" does not exists"))
+	//}
+	//return os.Getenv(key)
 }
 
 func itemExists(arrayType interface{}, item interface{}) bool {
