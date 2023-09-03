@@ -248,15 +248,11 @@ func isFlagPassed(name string) bool {
 func ver() {
 	println(color.Colorize(color.Cyan, `   
 
-   o            o                 o                                         
- _<|>_         <|>               <|>                                        
-               < \               < >                                        
-   o      o__ __o/    o__ __o     |        o__  __o   \o__ __o    o      o  
-  <|>    /v     |    /v     v\    o__/_   /v      |>   |     |>  <|>    <|> 
-  / \   />     / \  />       <\   |      />      //   / \   / \  < >    < > 
-  \o/   \      \o/  \         /   |      \o    o/     \o/   \o/   \o    o/  
-   |     o      |    o       o    o       v\  /v __o   |     |     v\  /v   
-  / \    <\__  / \   <\__ __/>    <\__     <\/> __/>  / \   / \     <\/>    
+██ ██████   ██████  ████████ ███████ ███    ██ ██    ██ 
+██ ██   ██ ██    ██    ██    ██      ████   ██ ██    ██ 
+██ ██   ██ ██    ██    ██    █████   ██ ██  ██ ██    ██ 
+██ ██   ██ ██    ██    ██    ██      ██  ██ ██  ██  ██  
+██ ██████   ██████     ██    ███████ ██   ████   ████                                                               
 	`))
 
 	println(color.Colorize(color.Yellow, "idotenv ver: "+version))
