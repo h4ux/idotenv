@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"reflect"
+	"runtime"
 	"strings"
 
 	"github.com/TwiN/go-color"
@@ -256,9 +257,10 @@ func ver() {
 	`))
 
 	println(color.Colorize(color.Yellow, "idotenv ver: "+version))
-	println(color.Colorize(color.Blue, "commit: "+commit))
-	println(color.Colorize(color.Blue, "built at: "+date))
-	//fmt.Printf("idotenv %s, commit %s, built at %s", version, commit, date)
+	println(color.Colorize(color.Blue, "Commit: "+commit))
+	println(color.Colorize(color.Green, "Built at: "+date))
+	println(color.Colorize(color.White, "Go version: "+runtime.Version()))
+	println(color.Colorize(color.White, "OS: "+runtime.GOOS+"/"+runtime.GOARCH))
 }
 
 func main() {
