@@ -145,7 +145,12 @@ func list(debug bool) {
 
 	output := string(filedata)
 	fmt.Println(output)
-	fmt.Println(myEnv) // need to merge
+
+	println(color.Colorize(color.Yellow, "This values will be added and override external vars if exists"))
+
+	for key, value := range myEnv {
+		println(color.Colorize(color.Cyan, key+": "+value))
+	}
 }
 
 func set(debug bool, key string, val string) {

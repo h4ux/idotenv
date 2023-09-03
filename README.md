@@ -24,7 +24,8 @@ Ex:
   -list string {json, table, yaml}
         List key value secrets
   -run
-        set env variables and run command after double dash Ex. idotenv run -- npm run dev
+        set env variables and run command after double dash Ex. idotenv -run -- pnpm run dev
+        Tip: you can also run: idotenv -- pnpm run dev
   -set string
         Set key value secret Ex: idotenv -set=KEY=VALUE (to add additional env var)
   -get string
@@ -33,6 +34,8 @@ Ex:
 ```
 
 ## Installation via install.sh
+
+* Temporary until brew tap will be configured
 
 ```bash
 # binary will be in $(go env GOPATH)/bin/idotenv
