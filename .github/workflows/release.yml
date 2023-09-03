@@ -1,7 +1,8 @@
 name: goreleaser
 on:
-  release:
-    types: [published]
+  workflow_run:
+    workflows: ['Create Tag']
+    types: [completed]
 permissions:
   contents: write
   # packages: write
